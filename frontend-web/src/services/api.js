@@ -64,7 +64,7 @@ function getAuthTokens() {
 
 // Créer une instance axios avec configuration par défaut
 const apiClient = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: `${API_URL}`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -73,7 +73,7 @@ const apiClient = axios.create({
 
 // Instance dédiée aux endpoints d'auth (évite d'envoyer un Bearer potentiellement expiré sur /auth/refresh)
 const authClient = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: `${API_URL}`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -82,7 +82,7 @@ const authClient = axios.create({
 
 // Instance séparée pour les uploads (sans Content-Type par défaut)
 const uploadClient = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: `${API_URL}`,
 });
 
 // Intercepteur pour ajouter le JWT à chaque requête
